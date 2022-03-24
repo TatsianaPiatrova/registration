@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+.buttons-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 50%;
+}
+.button-to-form, .button-to-table{
+    cursor: pointer;
+    border: none;
+    color: black;
+    height: 35px;
+    font-size: 18px;
+    background-color: #80a88d;
+    border-radius: 3px;
+    margin-bottom: 50px;
+}
+.registration-container{
+    display: none;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(228, 255, 223, 0.678);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+.open-form{
+    display: flex;
+}
+h1{
+    text-align: center;
+}
+.input{
+    width: 100%;
+    padding: 10px 0;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgb(178, 199, 175);
+    outline: none;
+    background: transparent;
+}
+input:focus, input:valid{
+    border-bottom: 1px solid rgb(4, 87, 48);
+    transition: ease-in-out .5s;
+}
+input:last-child:focus, input:last-child:valid{
+    border-bottom: none;
+    transition: none;
+}
+.date {
+    cursor: pointer;
+}
+form>div{
+    position: relative;
+}
+label{
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    pointer-events: none;
+    transition: .5s;
+}
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  left: 0;
+  color: #5a6379;
+  font-size: 14px;
+}
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.button{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    border: none;
+    color: black;
+    height: 35px;
+    font-size: 18px;
+    background-color: #80a88d;
+    border-radius: 3px;
+}
+
