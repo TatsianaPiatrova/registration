@@ -10,11 +10,11 @@ body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .buttons-container{
-    display: flex;
-    flex-direction: column;
     position: absolute;
     top: 40%;
-    left: 35%;
+    left: 37%;
+    display: flex;
+    flex-direction: column;
     width: 25%;
 }
 .button-to-form, .button-to-table{
@@ -28,6 +28,87 @@ body{
     margin-bottom: 50px;
     box-shadow: 0 15px 25px rgba(1, 32, 10, 0.6);
 }
+.close{
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    left: 96%;
+    top: 1%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid;
+    border-color: #80a88d;
+    border-radius: 50%;
+    transition: ease-in-out .3s;
+    z-index: 4;
+}
+.icon:before, .icon:after {
+    position: absolute;
+    left: 18px;
+    top: 3px;
+    content: ' ';
+    height: 35px;
+    width: 3px;
+    background-color: #80a88d;
+}
+.icon:after {
+    transform: rotate(45deg);
+}
+.icon:before {
+    transform: rotate(133deg);
+}
+.close:hover{
+    border-color: #5a6379;
+}
+table{
+    display: none;
+    max-width: 90vw;
+    width: auto;
+    flex: 1;
+    border-collapse: collapse;
+    grid-template-columns: 
+    minmax(150px, 1.67fr)
+    minmax(150px, 1fr)
+    minmax(150px, 1.67fr)
+    minmax(150px, 1fr)
+    minmax(150px, 1.67fr)
+    minmax(150px, 0.5fr)
+    minmax(150px, 1fr);
+}
+thead,
+tbody,
+tr {
+  display: contents;
+}
+
+th,
+td {
+  padding: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background:#80a88d;
+  text-align: left;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: white;
+  position: relative;
+}
+td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #555555;
+  }
+
+  tr:nth-child(even) td {
+    background: #f8f6ff;
+  }
+
 .registration-container{
     display: none;
     flex-direction: column;
@@ -39,12 +120,8 @@ body{
     padding: 40px;
     transform: translate(-50%, -50%);
     background: rgba(228, 255, 223, 0.678);
-    box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
-}
-.open-form{
-    display: flex;
 }
 h1{
     text-align: center;
