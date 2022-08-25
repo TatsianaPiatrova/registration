@@ -9,120 +9,7 @@ body{
     background-color: #ffffff;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.buttons-container{
-    position: absolute;
-    top: 40%;
-    left: 37%;
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-}
-.button-to-form, .button-to-table{
-    cursor: pointer;
-    border: none;
-    color: rgb(0, 0, 0);
-    height: 50px;
-    font-size: 22px;
-    background-color: #80a88d;
-    border-radius: 3px;
-    margin-bottom: 50px;
-    box-shadow: 0 15px 25px rgba(1, 32, 10, 0.6);
-}
-.close{
-    cursor: pointer;
-    display: none;
-    position: fixed;
-    left: 96%;
-    top: 1%;
-    width: 50px;
-    height: 50px;
-    border: 5px solid;
-    border-color: #80a88d;
-    border-radius: 50%;
-    transition: ease-in-out .3s;
-    z-index: 4;
-}
-.icon:before, .icon:after {
-    position: absolute;
-    left: 18px;
-    top: 3px;
-    content: ' ';
-    height: 35px;
-    width: 3px;
-    background-color: #80a88d;
-}
-.icon:after {
-    transform: rotate(45deg);
-}
-.icon:before {
-    transform: rotate(133deg);
-}
-.close:hover{
-    border-color: #5a6379;
-}
-table{
-    display: none;
-    max-width: 90vw;
-    width: auto;
-    flex: 1;
-    border-collapse: collapse;
-    grid-template-columns: 
-    minmax(150px, 1.67fr)
-    minmax(150px, 1fr)
-    minmax(150px, 1.67fr)
-    minmax(150px, 1fr)
-    minmax(150px, 1.67fr)
-    minmax(150px, 0.5fr)
-    minmax(150px, 1fr);
-}
-thead,
-tbody,
-tr {
-  display: contents;
-}
 
-th,
-td {
-  padding: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-th {
-  position: sticky;
-  top: 0;
-  background:#80a88d;
-  text-align: left;
-  font-weight: normal;
-  font-size: 1.1rem;
-  color: white;
-  position: relative;
-}
-td {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #555555;
-  }
-
-  tr:nth-child(even) td {
-    background: #f8f6ff;
-  }
-
-.registration-container{
-    display: none;
-    flex-direction: column;
-    font-size: 16px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(228, 255, 223, 0.678);
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-}
 h1{
     text-align: center;
 }
@@ -150,6 +37,7 @@ input:last-child:focus, input:last-child:valid{
 form>div{
     position: relative;
 }
+
 label{
     position: absolute;
     top:0;
@@ -190,3 +78,20 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 3px;
 }
 
+.left-margin {
+    margin: 0 .5em 0 0;
+}
+
+.right-button-margin {
+    margin: 0 0 1em 0;
+    overflow: hidden;
+}
+
+.modal-body {
+    padding: 20px 20px 0px 20px !important;
+    text-align: center !important;
+}
+
+.modal-footer {
+    text-align: center !important;
+}
