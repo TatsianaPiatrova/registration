@@ -32,10 +32,26 @@
         $student->score = $_POST["score"];
         $student->passport_number = $_POST["passport_number"];
 
-        if ($student->create()) {
-            echo '<div class="alert alert-success">Студент был успешно зарегистрирован.</div>';
+        $stmt = $student->readAll(0, $student->countAll());
+        $flag = true;
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+
+            extract($row);
+            if(!strcmp($student->passport_number,$passport_number)){
+                $flag = false;
+            }
+            if(!strcmp($student->phone_number,$phone_number)){
+                $flag = false;
+            }
+        }
+        if ($flag){
+            if ($student->create()) {
+                echo '<div class="alert alert-success">Студент был успешно зарегистрирован.</div>';
+            } else {
+                echo '<div class="alert alert-danger">Невозможно зарегистрировать студента.</div>';
+            }
         } else {
-            echo '<div class="alert alert-danger">Невозможно зарегистрировать студента.</div>';
+            echo '<div class="alert alert-danger">Студент с такими данными уже зарегестрирован.</div>';
         }
     }
 
@@ -72,7 +88,7 @@
                 <input type="text" name="passport_number" class="input passport" required="">
                 <label>Номер паспорта</label>
             </div>
-            <input type="submit" name="" value="Зарегистрировать" class="button">
+            <input type="submit" name="" value="Зарегистрировать" class="button submit">
         </form>
 
 <?php 

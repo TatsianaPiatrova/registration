@@ -33,6 +33,21 @@
                 });            
                 return false;
             });
+
+            // $(document).on("click", ".submit", function() {
+
+            //     var last_name = $('.last_name').val();
+            //     var name = $('.name').val();
+            //     var phone_Number = $('.phoneNumber').val();
+            //     var flag = true;
+
+            //     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    
+            //         extract($row);
+            //         echo ($phone_Number);
+            //     }
+            //     return false;
+            // });
         </script>
     </body>
 </html>
