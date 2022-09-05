@@ -49,7 +49,8 @@ label{
     transition: .5s;
 }
 input:focus ~ label,
-input:valid ~ label {
+input:valid ~ label,
+input:invalid ~ label {
   top: -20px;
   left: 0;
   color: #5a6379;

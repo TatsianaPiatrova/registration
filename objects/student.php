@@ -76,7 +76,7 @@
                     FROM
                         " . $this->table_name . "
                     ORDER BY
-                        score
+                        score DESC
                     LIMIT
                         {$from_record_num}, {$records_per_page}";
         

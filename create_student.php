@@ -58,37 +58,39 @@
 ?>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            <div class="last_name-box">
-                <input type="text" name="last_name" class="input last_name" required="">
-                <label>Фамилия</label>
-            </div>
-            <div class="name-box">
-                <input type="text" name="name" class="input name" required="">
-                <label>Имя</label>
-            </div>
-            <div>
-                <input type="text" name="patronymic" class="input patronymic" required="">
-                <label>Отчество</label>
-            </div>
-            <div>
-                <input type="date" name="date_of_birth" class="input date" required>
-                <label class="label-date">Дата рождения</label>
-            </div>
-            <div>
-                <input type="text" name="phone_number" class="input
-                        phoneNumber" required="" maxlength="13">
-                <label>Номер телефона</label>
-            </div>
-            <div>
-                <input type="number" name="score" class="input
-                        score" required="" min="0" max="100">
-                <label>Средний балл</label>
-            </div>
-            <div>
-                <input type="text" name="passport_number" class="input passport" required="">
-                <label>Номер паспорта</label>
-            </div>
-            <input type="submit" name="" value="Зарегистрировать" class="button submit">
+            <table class="table table-hover table-responsive table-bordered">
+                <div class="last_name-box">
+                    <input type="text" name="last_name" class="input last_name" required="" pattern="[А-я]{2,}">
+                    <label>Фамилия</label>
+                </div>
+                <div class="name-box">
+                    <input type="text" name="name" class="input name" required="" pattern="[А-я]{2,}">
+                    <label>Имя</label>
+                </div>
+                <div>
+                    <input type="text" name="patronymic" class="input patronymic" required="" pattern="[А-я]{2,}">
+                    <label>Отчество</label>
+                </div>
+                <div>
+                    <input type="date" name="date_of_birth" class="input date" required>
+                    <label class="label-date">Дата рождения</label>
+                </div>
+                <div>
+                    <input type="text" name="phone_number" class="input
+                            phoneNumber" required="" maxlength="13" pattern="+[0-9]{12}">
+                    <label>Номер телефона</label>
+                </div>
+                <div>
+                    <input type="number" name="score" class="input
+                            score" required="" min="0" max="100">
+                    <label>Средний балл</label>
+                </div>
+                <div>
+                    <input type="text" name="passport_number" class="input passport" required="">
+                    <label>Номер паспорта</label>
+                </div>
+                <input type="submit" name="" value="Зарегистрировать" class="button submit">
+            </table>
         </form>
 
 <?php 
