@@ -1,7 +1,7 @@
 <?php
  
-    include_once "objects/database.php";
-    include_once "objects/student.php";
+    include_once "../objects/database.php";
+    include_once "../objects/student.php";
 
     $database = new Database();
 
@@ -11,12 +11,12 @@
 
     $page_title = "Регистрация студента";
 
-    require_once "layout_header.php";
+    require_once "../views/layout_header.php";
 
 ?>
 
 <div class="right-button-margin">
-    <a href="index.php" class="btn btn-default pull-right">Просмотр всех студентов</a>
+    <a href="../index.php" class="btn btn-default pull-right">Просмотр всех студентов</a>
 </div>
 
 <?php
@@ -95,6 +95,6 @@
 
 <?php 
 
-    require_once "layout_footer.php";
+    require_once "../views/layout_footer.php";
 
 ?>

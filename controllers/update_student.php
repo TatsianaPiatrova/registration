@@ -3,28 +3,25 @@
     $id = isset($_GET["id"]) ? $_GET["id"] : die("ERROR: отсутствует ID.");
 
     // подключаем файлы для работы с базой данных и файлы с объектами
-    include_once "objects/database.php";
-    include_once "objects/student.php";
+    include_once "../objects/database.php";
+    include_once "../objects/student.php";
 
-    // получаем соединение с базой данных
     $database = new Database();
     $db = $database->getConnection();
 
-    // подготавливаем объекты
     $student = new Student($db);
 
     $student->id = $id;
-    echo $student->id;
 
     $student->readOne();
 
     $page_title = "Обновление информации о студенте";
 
-    include_once "layout_header.php";
+    include_once "../views/layout_header.php";
 ?>
 
 <div class="right-button-margin">
-    <a href="index.php" class="btn btn-default pull-right">Просмотр таблицы студентов</a>
+    <a href="../index.php" class="btn btn-default pull-right">Просмотр таблицы студентов</a>
 </div>
 
 <?php
@@ -102,6 +99,6 @@
 
 <?php 
 
-    require_once "layout_footer.php";
+    require_once "../views/layout_footer.php";
 
 ?>

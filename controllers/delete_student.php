@@ -2,8 +2,8 @@
     
     if ($_POST) {
 
-        include_once "objects/database.php";
-        include_once "objects/student.php";
+        include_once "../objects/database.php";
+        include_once "../objects/student.php";
 
         $database = new Database();
         $db = $database->getConnection();

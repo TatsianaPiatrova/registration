@@ -181,6 +181,66 @@
                 return false;
             }
         }
+
+        // читаем студентов по поисковому запросу
+        public function search($search_term, $from_record_num, $records_per_page){
+
+            $query = "SELECT
+                        p.id, p.last_name, p.name, p.patronymic, p.date_of_birth, p.phone_number, p.score, p.passport_number
+                    FROM
+                        " . $this->table_name . " p
+                    WHERE
+                        p.name LIKE ? OR p.last_name LIKE ? OR p.patronymic LIKE ? OR p.date_of_birth LIKE ? OR p.score LIKE ?
+                    ORDER BY
+                        p.name ASC
+                    LIMIT
+                        ?, ?";
+
+            // подготавливаем запрос
+            $stmt = $this->conn->prepare( $query );
+
+            // привязываем значения переменных
+            $search_term = "%{$search_term}%";
+            $stmt->bindParam(1, $search_term);
+            $stmt->bindParam(2, $search_term);
+            $stmt->bindParam(3, $search_term);
+            $stmt->bindParam(4, $search_term);
+            $stmt->bindParam(5, $search_term);
+            $stmt->bindParam(6, $from_record_num, PDO::PARAM_INT);
+            $stmt->bindParam(7, $records_per_page, PDO::PARAM_INT);
+
+            // выполняем запрос
+            $stmt->execute();
+
+            // возвращаем значения из БД
+            return $stmt;
+        }
+
+        public function countAll_BySearch($search_term) {
+
+            $query = "SELECT
+                        COUNT(*) as total_rows
+                    FROM
+                        " . $this->table_name . " p 
+                    WHERE
+                        p.name LIKE ? OR p.last_name LIKE ? OR p.patronymic LIKE ? OR p.date_of_birth LIKE ? OR p.score LIKE ?";
+
+            // подготовка запроса
+            $stmt = $this->conn->prepare( $query );
+
+            // привязка значений
+            $search_term = "%{$search_term}%";
+            $stmt->bindParam(1, $search_term);
+            $stmt->bindParam(2, $search_term);
+            $stmt->bindParam(3, $search_term);
+            $stmt->bindParam(4, $search_term);
+            $stmt->bindParam(5, $search_term);
+
+            $stmt->execute();
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $row["total_rows"];
+        }
     }
 
 ?>
