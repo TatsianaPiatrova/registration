@@ -18,7 +18,7 @@
     // кнопка создания студента
     echo "<div class=\"right-button-margin\">";
         echo "<a href=\"/controllers/create_student.php\" class=\"btn btn-primary pull-right\">";
-            echo "<span class=\"glyphicon glyphicon-plus\"></span> Создать товар";
+            echo "<span class=\"glyphicon glyphicon-plus\"></span> Зарегистрировать студента";
         echo "</a>";
     echo "</div>";
 
